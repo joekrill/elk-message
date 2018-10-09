@@ -1,0 +1,102 @@
+import ElkMessage from './ElkMessage';
+import ElkResponse from './responses/ElkResponse';
+import UnknownElkResponse from './responses/UnknownElkResponse';
+import ArmingStatusReport from './responses/ArmingStatusReport';
+import SendASCIIStringToIPAddress from './responses/SendASCIIStringToIPAddress';
+import AlarmReport from './responses/AlarmReport';
+import AlarmReportTest from './responses/AlarmReportTest';
+import EthernetModuleTest from './responses/EthernetModuleTest';
+import AlarmByZoneReport from './responses/AlarmByZoneReport';
+import AudioDataReply from './responses/AudioDataReply';
+import OutputChangeUpdate from './responses/OutputChangeUpdate';
+import AudioCommandOutgoing from './responses/AudioCommandOutgoing';
+import ControlOutputStatusReport from './responses/ControlOutputStatusReport';
+import CustomValueReply from './responses/CustomValueReply';
+import UserCodeChangeReply from './responses/UserCodeChangeReply';
+import CounterValueReply from './responses/CounterValueReply';
+import LightingDeviceDataReply from './responses/LightingDeviceDataReply';
+import EntryExitTimer from './responses/EntryExitTimer';
+import EmailSendTrigger from './responses/EmailSendTrigger';
+import UserCodeEntry from './responses/UserCodeEntry';
+import InstallerModeExited from './responses/InstallerModeExited';
+import InsteonLightingDeviceStatusReply from './responses/InsteonLightingDeviceStatusReply';
+import KeypadAreaAssignments from './responses/KeypadAreaAssignments';
+import KeypadKeyChange from './responses/KeypadKeyChange';
+import KeypadFunctionKeyPressReply from './responses/KeypadFunctionKeyPressReply';
+import SystemLogDataUpdate from './responses/SystemLogDataUpdate';
+import TemperatureData from './responses/TemperatureData';
+import PlcChangeUpdate from './responses/PlcChangeUpdate';
+import PlcDeviceStatusReply from './responses/PlcDeviceStatusReply';
+import EthernetModuleReset from './responses/EthernetModuleReset';
+import ElkRPConnected from './responses/ElkRPConnected';
+import RealTimeClockDataReply from './responses/RealTimeClockDataReply';
+import TextDescriptionReply from './responses/TextDescriptionReply';
+import SystemTroubleStatusReply from './responses/SystemTroubleStatusReply';
+import TemperatureReply from './responses/TemperatureReply';
+import TaskChangeUpdate from './responses/TaskChangeUpdate';
+import ThermostatData from './responses/ThermostatData';
+import Omnistat2Reply from './responses/Omnistat2Reply';
+import VersionNumberReply from './responses/VersionNumberReply';
+import UserCodeAreasReply from './responses/UserCodeAreasReply';
+import AlarmMemoryUpdate from './responses/AlarmMemoryUpdate';
+import ZoneChangeUpdate from './responses/ZoneChangeUpdate';
+import ZoneBypassReply from './responses/ZoneBypassReply';
+import ZonePartitionReport from './responses/ZonePartitionReport';
+import ZoneStatusReport from './responses/ZoneStatusReport';
+import ZoneDefinitionData from './responses/ZoneDefinitionData';
+import ZoneVoltageData from './responses/ZoneVoltageData';
+import InsteonLightingDeviceProgrammed from './responses/InsteonLightingDeviceProgrammed';
+
+const RESPONSE_MAP: { [index: string]: typeof ElkResponse } = {
+  [ArmingStatusReport.COMMAND]: ArmingStatusReport, // 4.2.13
+  [SendASCIIStringToIPAddress.COMMAND]: SendASCIIStringToIPAddress, // 4.2.13
+  [AlarmReport.COMMAND]: AlarmReport, // 4.4.1
+  [AlarmReportTest.COMMAND]: AlarmReportTest, // 4.4.3
+  [EthernetModuleTest.COMMAND]: EthernetModuleTest, // 4.4.5
+  [AlarmByZoneReport.COMMAND]: AlarmByZoneReport, // 4.5.1
+  [AudioDataReply.COMMAND]: AudioDataReply, // 4.6.2
+  [OutputChangeUpdate.COMMAND]: OutputChangeUpdate, // 4.7
+  [AudioCommandOutgoing.COMMAND]: AudioCommandOutgoing, // 4.8.3
+  [ControlOutputStatusReport.COMMAND]: ControlOutputStatusReport, // 4.9.4
+  [CustomValueReply.COMMAND]: CustomValueReply, // 4.10.3
+  [UserCodeChangeReply.COMMAND]: UserCodeChangeReply, // 4.11.2
+  [CounterValueReply.COMMAND]: CounterValueReply, // 4.12.3
+  [LightingDeviceDataReply.COMMAND]: LightingDeviceDataReply, // 4.14.2
+  [EntryExitTimer.COMMAND]: EntryExitTimer, // 4.15.1
+  [EmailSendTrigger.COMMAND]: EmailSendTrigger, // 4.16.1
+  [UserCodeEntry.COMMAND]: UserCodeEntry, // 4.17.1
+  [InstallerModeExited.COMMAND]: InstallerModeExited, // 4.18.1
+  [InsteonLightingDeviceStatusReply.COMMAND]: InsteonLightingDeviceStatusReply, // 4.19.4
+  [KeypadAreaAssignments.COMMAND]: KeypadAreaAssignments, // 4.20.2
+  [KeypadKeyChange.COMMAND]: KeypadKeyChange, // 4.21
+  [KeypadFunctionKeyPressReply.COMMAND]: KeypadFunctionKeyPressReply, // 4.22.2
+  [SystemLogDataUpdate.COMMAND]: SystemLogDataUpdate, // 4.23
+  [TemperatureData.COMMAND]: TemperatureData, // 4.24.2
+  [PlcChangeUpdate.COMMAND]: PlcChangeUpdate, // 4.25.2
+  [PlcDeviceStatusReply.COMMAND]: PlcDeviceStatusReply, // 4.25.6
+  [EthernetModuleReset.COMMAND]: EthernetModuleReset, // 4.26.1
+  [ElkRPConnected.COMMAND]: ElkRPConnected, // 4.27
+  [RealTimeClockDataReply.COMMAND]: RealTimeClockDataReply, // 4.28.2
+  [TextDescriptionReply.COMMAND]: TextDescriptionReply, // 4.29.2
+  [SystemTroubleStatusReply.COMMAND]: SystemTroubleStatusReply, // 4.30.2
+  [TemperatureReply.COMMAND]: TemperatureReply, // 4.31.2
+  [TaskChangeUpdate.COMMAND]: TaskChangeUpdate, // 4.33
+  [ThermostatData.COMMAND]: ThermostatData, // 4.35.2
+  [Omnistat2Reply.COMMAND]: Omnistat2Reply, // 4.35.5
+  [VersionNumberReply.COMMAND]: VersionNumberReply, // 4.36.2
+  [UserCodeAreasReply.COMMAND]: UserCodeAreasReply, // 4.37.2
+  [AlarmMemoryUpdate.COMMAND]: AlarmMemoryUpdate, // 4.38
+  [ZoneChangeUpdate.COMMAND]: ZoneChangeUpdate, // 4.39
+  [ZoneBypassReply.COMMAND]: ZoneBypassReply, // 4.40.2
+  [ZonePartitionReport.COMMAND]: ZonePartitionReport, // 4.40.4
+  [ZoneStatusReport.COMMAND]: ZoneStatusReport, // 4.40.6
+  [ZoneDefinitionData.COMMAND]: ZoneDefinitionData, // 4.41
+  [ZoneVoltageData.COMMAND]: ZoneVoltageData, // 4.43.2
+  [InsteonLightingDeviceProgrammed.COMMAND]: InsteonLightingDeviceProgrammed // 4.44
+};
+
+export default function parse(raw: string): ElkMessage {
+  const command = raw.substr(2, 2);
+  const ResponseClass = RESPONSE_MAP[command] || UnknownElkResponse;
+  return new ResponseClass(raw);
+}
