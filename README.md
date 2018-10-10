@@ -4,7 +4,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/joekrill/elk-message.svg)](https://greenkeeper.io/)
 [![Travis](https://travis-ci.org/joekrill/elk-message.svg?branch=master)](https://travis-ci.org/joekrill/elk-message)
 [![Coveralls](https://coveralls.io/repos/github/joekrill/elk-message/badge.svg)](https://coveralls.io/github/joekrill/elk-message)
-[![Dev Dependencies](https://david-dm.org/joekrill/elk-message/dev-status.svg)](https://david-dm.org/joekrill/elk-message?type=dev)>>>>>>> master
+[![Dev Dependencies](https://david-dm.org/joekrill/elk-message/dev-status.svg)](https://david-dm.org/joekrill/elk-message?type=dev)
 
 A module for parsing and generating messages for the [Elk M1](https://www.elkproducts.com/product-catalog/m1-gold-cross-platform-control) security system.
 
