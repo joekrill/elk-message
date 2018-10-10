@@ -1,5 +1,7 @@
 # elk-message
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/joekrill/elk-message.svg)](https://greenkeeper.io/)
+
 A module for parsing and generating messages for the [Elk M1](https://www.elkproducts.com/product-catalog/m1-gold-cross-platform-control) security system.
 
 Fully* implements the Elk M1 RS232 ASCII protocol revision 1.84 (Feb 26, 2016). 
