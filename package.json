@@ -1,6 +1,6 @@
 {
   "name": "elk-message",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A message parsing and generation library for the Elk M1 security system ASCII protocol",
   "keywords": [
     "elk",
