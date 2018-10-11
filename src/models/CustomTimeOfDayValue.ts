@@ -13,7 +13,7 @@ export default class CustomTimeOfDayValue implements CustomValue {
     return new CustomTimeOfDayValue(hour, minutes);
   }
 
-  readonly format = CustomValueFormat.TimeOfDay;
+  readonly format: CustomValueFormat = CustomValueFormat.TimeOfDay;
 
   constructor(readonly hour: number, readonly minutes: number) {}
 
