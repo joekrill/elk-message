@@ -1,11 +1,5 @@
 import ElkMessage from '../ElkMessage';
-import {
-  CHECKSUM_WIDTH,
-  PACKET_LENGTH_WIDTH,
-  RESERVED_WIDTH,
-  TERMINATOR_WIDTH,
-  TERMINATOR
-} from '../constants';
+import { CHECKSUM_WIDTH, PACKET_LENGTH_WIDTH, RESERVED_WIDTH, TERMINATOR } from '../constants';
 import calculateChecksum from '../../util/calculateChecksum';
 import numberToHex from '../../util/numberToHex';
 
@@ -17,11 +11,17 @@ import numberToHex from '../../util/numberToHex';
  * 4. Data
  * 5. Reserved
  * 6. Checksum
+ * 7. Terminator
  */
 const PACKET_REGEX = new RegExp(
-  `^(\\S{${PACKET_LENGTH_WIDTH}})(\\S)(\\S)(.*)(\\S{${RESERVED_WIDTH}})(\\S{${CHECKSUM_WIDTH}})${TERMINATOR}$`
+  `^(\\S{${PACKET_LENGTH_WIDTH}})(\\S)(\\S)(.*)(\\S{${RESERVED_WIDTH}})(\\S{${CHECKSUM_WIDTH}})(${TERMINATOR}|${
+    TERMINATOR[0]
+  }|${TERMINATOR[1]})$`
 );
 
+/**
+ * A message that is received from the Elk M1
+ */
 export default class ElkResponse implements ElkMessage {
   readonly isWellFormed: boolean = false;
   readonly isChecksumValid: boolean = false;
@@ -32,6 +32,7 @@ export default class ElkResponse implements ElkMessage {
   readonly data: string = '';
   readonly reserved?: string;
   readonly checksum?: string;
+  readonly terminator?: string;
   readonly expectedChecksum?: string;
   readonly packetLength?: string;
   readonly expectedPacketLength?: string;
@@ -47,13 +48,14 @@ export default class ElkResponse implements ElkMessage {
       this.data = result[4];
       this.reserved = result[5];
       this.checksum = result[6];
+      this.terminator = result[7];
 
       this.expectedPacketLength = numberToHex(
-        raw.length - PACKET_LENGTH_WIDTH - TERMINATOR_WIDTH,
+        raw.length - PACKET_LENGTH_WIDTH - this.terminator.length,
         PACKET_LENGTH_WIDTH
       );
       this.expectedChecksum = calculateChecksum(
-        raw.substring(0, raw.length - CHECKSUM_WIDTH - TERMINATOR_WIDTH)
+        raw.substring(0, raw.length - CHECKSUM_WIDTH - this.terminator.length)
       );
 
       this.isChecksumValid = this.checksum === this.expectedChecksum;

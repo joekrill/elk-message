@@ -1,9 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 describe('ElkResponse', () => {
-  describe('Valid packet', () => {
-    let elkResponse: ElkResponse;
+  let elkResponse: ElkResponse;
 
+  describe('Valid packet', () => {
     beforeEach(() => {
       elkResponse = new ElkResponse('1EAS100000004000000030000000000E\r\n');
     });
@@ -26,8 +26,6 @@ describe('ElkResponse', () => {
   });
 
   describe('Invalid packet', () => {
-    let elkResponse: ElkResponse;
-
     beforeEach(() => {
       elkResponse = new ElkResponse('XXXXX');
     });
@@ -39,7 +37,6 @@ describe('ElkResponse', () => {
   describe('Incorrect checksum', () => {
     // Should be `0E`, not `0F`
     const raw = '1EAS100000004000000030000000000F\r\n';
-    let elkResponse: ElkResponse;
 
     beforeEach(() => {
       elkResponse = new ElkResponse(raw);
@@ -57,7 +54,6 @@ describe('ElkResponse', () => {
   describe('Incorrect packet length', () => {
     // Should be `1E`, not `AA`
     const raw = 'AAAS100000004000000030000000000E\r\n';
-    let elkResponse: ElkResponse;
 
     beforeEach(() => {
       elkResponse = new ElkResponse(raw);
@@ -76,7 +72,6 @@ describe('ElkResponse', () => {
     // Should be `1E`, not `CC` for length, and `0E` (or `FE`, depending on
     // whether the invalid length value is used) not `DD` for checksum
     const raw = 'CCAS10000000400000003000000000DD\r\n';
-    let elkResponse: ElkResponse;
 
     beforeEach(() => {
       elkResponse = new ElkResponse(raw);
@@ -96,14 +91,58 @@ describe('ElkResponse', () => {
   });
 
   describe('empty packet', () => {
-    let elkResponse: ElkResponse;
-
     beforeEach(() => {
       elkResponse = new ElkResponse('');
     });
 
     it('has `command` == null', () => {
       expect(elkResponse.command).toBeNull();
+    });
+  });
+
+  describe('terminator', () => {
+    describe('no carriage return or line feed', () => {
+      beforeEach(() => {
+        elkResponse = new ElkResponse('1EAS100000004000000030000000000E');
+      });
+
+      it('is not well formed', () => {
+        expect(elkResponse.isWellFormed).toBe(false);
+        expect(elkResponse.terminator).toBe(undefined);
+      });
+    });
+
+    describe('both carriage return or line feed', () => {
+      beforeEach(() => {
+        elkResponse = new ElkResponse('1EAS100000004000000030000000000E\r\n');
+      });
+
+      it('is well formed', () => {
+        expect(elkResponse.isWellFormed).toBe(true);
+        expect(elkResponse.terminator).toBe('\r\n');
+      });
+    });
+
+    describe('carriage return only', () => {
+      beforeEach(() => {
+        elkResponse = new ElkResponse('1EAS100000004000000030000000000E\r');
+      });
+
+      it('is well formed', () => {
+        expect(elkResponse.isWellFormed).toBe(true);
+        expect(elkResponse.terminator).toBe('\r');
+      });
+    });
+
+    describe('line feed only', () => {
+      beforeEach(() => {
+        elkResponse = new ElkResponse('1EAS100000004000000030000000000E\n');
+      });
+
+      it('is well formed', () => {
+        expect(elkResponse.isWellFormed).toBe(true);
+        expect(elkResponse.terminator).toBe('\n');
+      });
     });
   });
 });
