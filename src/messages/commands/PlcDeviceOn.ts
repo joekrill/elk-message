@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.25.4 Turn ON PLC Device (pn)
+ * Turn ON PLC Device
+ *
+ * @see 4.25.4 Turn ON PLC Device (pn)
  */
 export default class PlcDeviceOn extends ElkCommand {
   constructor(readonly houseCode: string, readonly unitCode: number) {

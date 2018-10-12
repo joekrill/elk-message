@@ -3,7 +3,9 @@ import ElkResponse from './ElkResponse';
 const SPLIT_CHUNKS_REGEX = /.{1,3}/g;
 
 /**
- * 4.24.2 Reply Temperature Data (LW)
+ * Reply Temperature Data
+ *
+ * @see 4.24.2 Reply Temperature Data (LW)
  */
 export default class TemperatureData extends ElkResponse {
   static readonly COMMAND = 'LW';

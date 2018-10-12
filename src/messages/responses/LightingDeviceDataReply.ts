@@ -1,7 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.14.2 Reply Lighting Device Status Data (DS)
+ * Reply Lighting Device Status Data
+ *
+ * @see 4.14.2 Reply Lighting Device Status Data (DS)
  */
 export default class LightingDeviceDataReply extends ElkResponse {
   static readonly COMMAND = 'DS';

@@ -2,7 +2,9 @@ import ElkResponse from './ElkResponse';
 import PartyMode from '../../enums/PartyMode';
 
 /**
- * 4.6.2 Reply With Audio Data (CA)
+ * Reply With Audio Data
+ *
+ * @see 4.6.2 Reply With Audio Data (CA)
  */
 export default class AudioDataReply extends ElkResponse {
   static readonly COMMAND = 'CA';

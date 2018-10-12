@@ -3,7 +3,7 @@ import DayOfWeek from '../../enums/DayOfWeek';
 import MonthOfYear from '../../enums/MonthOfYear';
 
 /**
- * 4.4.5 Ethernet Module Test (XK)
+ * Ethernet Module Test
  *
  * The “XK” command is automatically sent every 30 seconds. This is
  * done regardless of whether an M1XEP Ethernet Module is present or
@@ -30,6 +30,8 @@ import MonthOfYear from '../../enums/MonthOfYear';
  *
  * NOTE: Control Firmware Version 4.32 and after includes the M1’s real
  * time clock information.
+ *
+ * @see 4.4.5 Ethernet Module Test (XK)
  */
 export default class EthernetModuleTest extends ElkResponse {
   static readonly COMMAND = 'XK';

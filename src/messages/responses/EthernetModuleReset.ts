@@ -1,7 +1,7 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.26 Reset Ethernet Module (RE)
+ * Reset Ethernet Module
  *
  * This command is originated from the M1 and causes the M1XEP
  * Ethernet Module to reset its processor and/or its IP address
@@ -9,6 +9,8 @@ import ElkResponse from './ElkResponse';
  * M1XEP is set to an unknown value. This is accessed through the
  * M1’s Keypad Global Installer Programming, Option 45, then enter
  * 96. M1 Version 4.3.7 and after.
+ *
+ * @see 4.26 Reset Ethernet Module (RE)
  */
 export default class EthernetModuleReset extends ElkResponse {
   static readonly COMMAND = 'RE';

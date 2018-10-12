@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.25.7 Toggle PLC Device (pt)
+ * Toggle PLC Device
+ *
+ * @see 4.25.7 Toggle PLC Device (pt)
  */
 export default class PlcDeviceToggle extends ElkCommand {
   constructor(readonly houseCode: string, readonly unitCode: number) {

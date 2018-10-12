@@ -1,7 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.43.2 Reply Zone Analog Voltage Data (ZV)
+ * Reply Zone Analog Voltage Data
+ *
+ * @see 4.43.2 Reply Zone Analog Voltage Data (ZV)
  */
 export default class ZoneVoltageData extends ElkResponse {
   static readonly COMMAND = 'ZV';

@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.19.5 Request Programming Of Insteon Lighting Device Data (ip)
+ * Request Programming Of Insteon Lighting Device Data
+ *
+ * @see 4.19.5 Request Programming Of Insteon Lighting Device Data (ip)
  */
 export default class InsteonLightingDeviceProgramRequest extends ElkCommand {
   constructor(readonly startingDeviceNumber: number, readonly deviceIds: string[]) {

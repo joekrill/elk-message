@@ -7,7 +7,12 @@ import CustomNumberValue from '../../models/CustomNumberValue';
 const SPLIT_ALL_REGEX = /.{1,6}/g;
 
 /**
- * 4.10.3 Reply With Custom Value (CR)
+ * Reply With Custom Value
+ *
+ * Sent in response to a {@link CustomValueRead}
+ * or {@link CustomValuesReadAll}
+ *
+ * @see 4.10.3 Reply With Custom Value (CR)
  */
 export default class CustomValueReply extends ElkResponse {
   static readonly COMMAND = 'CR';

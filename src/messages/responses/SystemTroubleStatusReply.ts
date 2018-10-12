@@ -2,12 +2,14 @@ import ElkResponse from './ElkResponse';
 import SystemTroubleType from '../../enums/SystemTroubleType';
 
 /**
- * 4.30.2 Reply System Trouble Status (SS)
+ * Reply System Trouble Status
  *
  * This command allows automation equipment to poll
  * for system trouble status. Firmware revision 4.5.4,
  * 5.1.4 and after. This message will automatically
  * be sent upon a trouble status change.
+ *
+ * @see 4.30.2 Reply System Trouble Status (SS)
  */
 export default class SystemTroubleStatusReply extends ElkResponse {
   static readonly COMMAND = 'SS';

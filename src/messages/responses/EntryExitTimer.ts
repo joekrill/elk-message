@@ -2,13 +2,15 @@ import ElkResponse from './ElkResponse';
 import { ArmingLevel } from '../../enums';
 
 /**
- * 4.15.1 Send Entry/Exit Data (EE)
+ * Send Entry/Exit Data
  *
  * This sends the entry 1 & 2 and exit 1 & 2 time data when the timers
  * start by area. When each exit timer expires an “EE” command is also
  * transmitted.
  * M1 Version 4.1.12, 5.1.12 or later.
  * Armed State available in 4.1.18, 5.1.18 or later.
+ *
+ * @see 4.15.1 Send Entry/Exit Data (EE)
  */
 export default class ExntryExitTimer extends ElkResponse {
   static readonly COMMAND = 'EE';

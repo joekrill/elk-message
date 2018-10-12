@@ -1,11 +1,13 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.27 ELKRP Connected (RP)
+ * ELKRP software Connected
  *
  * The M1XEP sends the following ASCII command out to
  * all socket connected devices when ELK RP,
  * Upload/Download Software, disconnects from the M1
+ *
+ * @see 4.27 ELKRP Connected (RP)
  */
 export default class ElkRPConnected extends ElkResponse {
   static readonly COMMAND = 'RP';

@@ -3,6 +3,9 @@ import numberToHex from '../../util/numberToHex';
 import calculateChecksum from '../../util/calculateChecksum';
 import { PACKET_LENGTH_WIDTH, RESERVED_DEFAULT, TERMINATOR } from '../constants';
 
+/**
+ * A message that is sent to the Elk M1
+ */
 export default abstract class ElkCommand implements ElkMessage {
   constructor(
     readonly messageType: string,

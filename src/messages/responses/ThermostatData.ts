@@ -2,7 +2,9 @@ import ElkResponse from './ElkResponse';
 import ThermostatMode from '../../enums/ThermostatMode';
 
 /**
- * 4.35.2 Reply Thermostat Data (TR)
+ * Reply Thermostat Data
+ *
+ * @see 4.35.2 Reply Thermostat Data (TR)
  */
 export default class ThermostatData extends ElkResponse {
   static readonly COMMAND = 'TR';

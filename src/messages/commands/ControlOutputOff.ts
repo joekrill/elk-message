@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.9.1 Control Output off (cf)
+ * Control Output off
+ *
+ * @see 4.9.1 Control Output off (cf)
  */
 export default class ControlOutputOff extends ElkCommand {
   constructor(readonly output: number) {

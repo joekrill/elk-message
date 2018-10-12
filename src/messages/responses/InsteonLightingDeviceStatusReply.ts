@@ -3,7 +3,9 @@ import ElkResponse from './ElkResponse';
 const SPLIT_DEVICE_IDS_REGEX = /.{1,6}/g;
 
 /**
- * 4.19.4 Reply Read Of Insteon Lighting Device Data (IR)
+ * Reply Read Of Insteon Lighting Device Data
+ *
+ * @see 4.19.4 Reply Read Of Insteon Lighting Device Data (IR)
  */
 export default class InsteonLightingDeviceStatusReply extends ElkResponse {
   static readonly COMMAND = 'IR';

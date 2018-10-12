@@ -2,7 +2,9 @@ import ElkResponse from './ElkResponse';
 import TextDescriptionType from '../../enums/TextDescriptionType';
 
 /**
- * 4.29.2 Reply With ASCII String Text Descriptions (SD)
+ * Reply With ASCII String Text Descriptions
+ *
+ * @see 4.29.2 Reply With ASCII String Text Descriptions (SD)
  */
 export default class TextDescriptionReply extends ElkResponse {
   static readonly COMMAND = 'SD';

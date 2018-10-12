@@ -1,7 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.20.2 Reply With Keypad Areas (KA)
+ * Reply With Keypad Areas
+ *
+ * @see 4.20.2 Reply With Keypad Areas (KA)
  */
 export default class KeypadAreaAssignments extends ElkResponse {
   static readonly COMMAND = 'KA';

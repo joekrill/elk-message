@@ -1,11 +1,11 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.9.3 Control Output Status Request (cs)
+ * Control Output Status Request
  *
- * The control panel responds with a Control Output Status Report for all 208 outputs.
+ * The control panel responds with a {@link ControlOutputStatusReport} Report for all 208 outputs.
  *
- * @see {ControlOutputStatusReport}
+ * @see 4.9.3 Control Output Status Request (cs)
  */
 export default class ControlOutputStatusRequest extends ElkCommand {
   constructor() {

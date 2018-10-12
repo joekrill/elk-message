@@ -3,7 +3,9 @@ import FunctionKey from '../../enums/FunctionKey';
 import ChimeMode from '../../enums/ChimeMode';
 
 /**
- * 4.22.2 Reply Keypad Function Key Press (KF)
+ * Reply Keypad Function Key Press
+ *
+ * @see 4.22.2 Reply Keypad Function Key Press (KF)
  */
 export default class KeypadFunctionKeyPressReply extends ElkResponse {
   static readonly COMMAND = 'KF';

@@ -2,7 +2,9 @@ import ElkCommand from './ElkCommand';
 import CustomValue from '../../models/CustomValue';
 
 /**
- * 4.10.5 Write Custom Value (cw)
+ * Write Custom Value
+ *
+ * @see 4.10.5 Write Custom Value (cw)
  */
 export default class CustomValueWrite extends ElkCommand {
   constructor(readonly valueNumber: number, readonly value: CustomValue) {

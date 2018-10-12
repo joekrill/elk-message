@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * Control Output On (cn)
+ * Control Output On
+ *
+ * @see 4.9.2 Control Output On (cn)
  */
 export default class ControlOutputOn extends ElkCommand {
   constructor(readonly output: number, readonly duration: number = 0) {

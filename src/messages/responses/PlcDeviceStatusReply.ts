@@ -1,7 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.25.6 Returned PLC status (PS)
+ * Returned PLC status
+ *
+ * @see 4.25.6 Returned PLC status (PS)
  */
 export default class PlcDeviceStatusReply extends ElkResponse {
   static readonly COMMAND = 'PS';

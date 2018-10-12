@@ -2,7 +2,9 @@ import ElkResponse from './ElkResponse';
 import TemperatureDeviceType from '../../enums/TemperatureDeviceType';
 
 /**
- * 4.31.2 Reply With Requested Temperature (ST)
+ * Reply With Requested Temperature
+ *
+ * @see 4.31.2 Reply With Requested Temperature (ST)
  */
 export default class TemperatureReply extends ElkResponse {
   static readonly COMMAND = 'ST';

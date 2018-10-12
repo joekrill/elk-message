@@ -1,6 +1,10 @@
 import ElkResponse from './ElkResponse';
 
 /**
+ * Reply With Counter Value Format
+ *
+ * Sent in response to a {@link CounterValuRead}
+ *
  * 4.12.3 Reply With Counter Value Format (CV)
  */
 export default class CounterValueReply extends ElkResponse {

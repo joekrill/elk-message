@@ -1,7 +1,7 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.42.1 Zone Trigger (zt)
+ * Zone Trigger
  *
  * This command allows a 3rd party integration device to trigger
  * an alarm condition on a EOL hardwired zone defined with any
@@ -13,6 +13,8 @@ import ElkCommand from './ElkCommand';
  * condition and therefore cannot trigger an alarm condition for
  * zone types that require a short. i.e. Fire zone alarms cannot
  * be triggered.
+ *
+ * @see 4.42.1 Zone Trigger (zt)
  */
 export default class ZoneTrigger extends ElkCommand {
   constructor(readonly zoneNumber: number) {

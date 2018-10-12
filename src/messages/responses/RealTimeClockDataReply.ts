@@ -3,7 +3,9 @@ import DayOfWeek from '../../enums/DayOfWeek';
 import MonthOfYear from '../../enums/MonthOfYear';
 
 /**
- * 4.28.2 Reply Real Time Clock Data (RR)
+ * Reply Real Time Clock Data
+ *
+ * @see 4.28.2 Reply Real Time Clock Data (RR)
  */
 export default class RealTimeClockDataReply extends ElkResponse {
   static readonly COMMAND = 'RR';

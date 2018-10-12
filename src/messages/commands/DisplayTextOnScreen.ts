@@ -18,7 +18,7 @@ export function encodeLineData(input?: string | null) {
 }
 
 /**
- * 4.13 Display Text On LCD Screen (dm)
+ * Display Text On LCD Screen of keypads
  *
  * This is a M1 received message to display ascii text on the bottom line
  * of the LCD display on the keypads in the area specified. Enter the line
@@ -26,6 +26,8 @@ export function encodeLineData(input?: string | null) {
  * than 16 characters are to be displayed. The message line, L1 or L2,
  * will need dummy characters to fill the rest of the line for 16
  * characters each line.
+ *
+ * @see 4.13 Display Text On LCD Screen (dm)
  */
 export default class DisplayTextOnScreen extends ElkCommand {
   constructor(

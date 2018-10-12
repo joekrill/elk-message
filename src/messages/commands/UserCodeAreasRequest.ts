@@ -1,7 +1,7 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.37.1 Request Valid User Code Areas (ua)
+ * Request Valid User Code Areas
  *
  * This request command allows automation equipment to send a
  * user code to the control and have returned what areas the
@@ -10,6 +10,8 @@ import ElkCommand from './ElkCommand';
  * to area 8. If the returned value is 0, then the code is not valid
  * in any area. M1 Version 4.2.5 , type of code is in Version 4.3.6
  * and after.
+ *
+ * @see 4.37.1 Request Valid User Code Areas (ua)
  */
 export default class UserCodeAreasRequest extends ElkCommand {
   constructor(readonly userCode: string) {

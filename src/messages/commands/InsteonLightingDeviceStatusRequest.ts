@@ -1,7 +1,7 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.19.3 Request Read Of Insteon Lighting Device Data (ir)
+ * Request Read Of Insteon Lighting Device Data
  *
  * This command allows the M1 to poll single light devices to obtain
  * their on, off, dim status. This will be an automatic command issued
@@ -10,6 +10,8 @@ import ElkCommand from './ElkCommand';
  * scenes will not return valid data. Enable the “2 Way” Poll setting for
  * the device to be polled. M1 Version 4.3.9 and after. This command
  * cannot be used by automation equipment.
+ *
+ * @see 4.19.3 Request Read Of Insteon Lighting Device Data (ir)
  */
 export default class InsteonLightingDeviceStatusRequest extends ElkCommand {
   constructor(readonly startingDeviceNumber: number, readonly deviceCount: number) {

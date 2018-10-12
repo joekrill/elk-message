@@ -2,9 +2,11 @@ import ElkResponse from './ElkResponse';
 import UserCodeChangeType from '../../enums/UserCodeChangeType';
 
 /**
- * 4.11.2 Reply Change User Code (CU)
+ * Reply Change User Code
  *
- * @see {UserCodeChangeRequest}
+ * Response to {@link UserCodeChangeRequest}
+ *
+ * @see 4.11.2 Reply Change User Code (CU)
  */
 export default class UserCodeChangeReply extends ElkResponse {
   static readonly COMMAND = 'CU';

@@ -2,9 +2,11 @@ import ElkResponse from './ElkResponse';
 import ZoneDefinition from '../../enums/ZoneDefinition';
 
 /**
- * 4.5.1 Reply Alarm By Zone Report Data (AZ)
+ * Reply Alarm By Zone Report Data
  *
- * @see {AlarmByZoneRequest}
+ * Can be requested using a {@link AlarmByZoneRequest}
+ *
+ * @see 4.5.1 Reply Alarm By Zone Report Data (AZ)
  */
 export default class AlarmByZoneReport extends ElkResponse {
   static readonly COMMAND = 'AZ';

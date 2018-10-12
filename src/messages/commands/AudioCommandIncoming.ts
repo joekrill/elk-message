@@ -2,7 +2,7 @@ import ElkCommand from './ElkCommand';
 import AudioCommand from '../../enums/AudioCommand';
 
 /**
- * 4.8.1 Incoming Audio Command (cd)
+ * Incoming Audio Command
  *
  * An M1XEP Ethernet Module is required to intercept the “cd” command.
  * These commands are sent into the M1XEP via the Ethernet connection
@@ -15,6 +15,8 @@ import AudioCommand from '../../enums/AudioCommand';
  * “CD” commands or other control Rules. ELKRP downloads the Audio
  * Equipment Command tables into the M1XEP according to the Audio
  * Equipment Manufacturer. M1 version 4.1.11, 5.1.11 or later is required.
+ *
+ * @see 4.8.1 Incoming Audio Command (cd)
  */
 export default class AudioCommandIncoming extends ElkCommand {
   constructor(

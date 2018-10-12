@@ -2,7 +2,9 @@ import ElkResponse from './ElkResponse';
 import UserCodeType from '../../enums/UserCodeType';
 
 /**
- * 4.37.2 Reply With Valid User Code Areas (UA)
+ * Reply With Valid User Code Areas
+ *
+ * @see 4.37.2 Reply With Valid User Code Areas (UA)
  */
 export default class UserCodeAreasReply extends ElkResponse {
   static readonly COMMAND = 'UA';

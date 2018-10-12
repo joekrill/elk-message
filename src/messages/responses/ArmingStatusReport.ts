@@ -4,17 +4,22 @@ import AlarmState from '../../enums/AlarmState';
 import AreaArmingStatus from '../../models/AreaArmingStatus';
 
 /**
- * 4.2.13 Reply Arming Status Report Data (AS)
- *
- * Represents a response from the Elk M1 that includes the arming status
- * for all areas.
+ * A response from the Elk M1 that reports the arming status for all areas.
  *
  * If the control’s area status changes, this message will be sent if
  * Global Option “Transmit Keypad Keys” is enabled.
+ *
+ * May be requested by sending a {@link ArmingStatusRequest}
+ *
+ * @see 4.2.13 Reply Arming Status Report Data (AS)
  */
 export default class ArmingStatusReport extends ElkResponse {
   static readonly COMMAND = 'AS';
 
+  /**
+   * An array describing status for each area
+   * (area 1 = index 0, area 2 = index 1, etc.)
+   */
   readonly areas: AreaArmingStatus[];
 
   constructor(raw: string) {
@@ -35,12 +40,17 @@ export default class ArmingStatusReport extends ElkResponse {
     );
   }
 
+  /**
+   * Gets the arming status for an area
+   * @param areaNumber The area number (1..8)
+   */
   getAreaStatus(areaNumber: number): AreaArmingStatus {
     return this.areas[areaNumber - 1];
   }
 
   /**
-   * If any area has an ArmUpState of `ArmedTimer`, this will return the
+   * If any area has an {@link AreaArmingStatus.armUpState} of
+   * {@link ArmUpState.ArmedTimer}, this will return the
    * exit time in seconds; Othwerise, this returns `null`
    */
   get exitTime(): number | null {
@@ -55,8 +65,10 @@ export default class ArmingStatusReport extends ElkResponse {
   }
 
   /**
-   * If any area has an AlarmState of `EntranceDelayActive` and no ArmUpState of
-   * `ArmedTimer`, this will return the entrance time in seconds; Othwerise, this
+   * If any area has an {@link AreaArmingStatus.alarmState} of
+   * {@link AlarmState.EntranceDelayActive} and no areas have an
+   * {@link AreaArmingStatus.armUpState} of {@link ArmUpState.ArmedTimer},
+   * this will return the entrance time in seconds; Othwerise, this
    * returns `null`.
    */
   get entranceTime(): number | null {

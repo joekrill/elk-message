@@ -1,9 +1,11 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.12.1 Read Counter Value (cv)
+ * Read Counter Value
  *
- * @see {CounterValueReply}
+ * The control responds with {@link CounterValueReply}
+ *
+ * @see 4.12.1 Read Counter Value (cv)
  */
 export default class CounterValueRead extends ElkCommand {
   constructor(readonly counterNumber: number) {

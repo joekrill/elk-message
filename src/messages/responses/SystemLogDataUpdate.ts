@@ -2,7 +2,7 @@ import ElkResponse from './ElkResponse';
 import DayOfWeek from '../../enums/DayOfWeek';
 
 /**
- * 4.23 System Log Data Update (LD)
+ * System Log Data Update
  *
  * As the control log is written, the same information is
  *  sent out the RS-232 port. The log information will have
@@ -17,6 +17,8 @@ import DayOfWeek from '../../enums/DayOfWeek';
  * location TRUE in the M1 Control Global Programming Locations 35.
  * Example: “Xmit Event Log–ASCII” (Yes or No). The request for log
  * data “ld” is not controlled by this option.
+ *
+ * @see 4.23 System Log Data Update (LD)
  */
 export default class SystemLogDataUpdate extends ElkResponse {
   static readonly COMMAND = 'LD';

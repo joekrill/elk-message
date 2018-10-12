@@ -1,7 +1,7 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.25.2 PLC Change Update (PC)
+ * PLC Change Update
  *
  * Special: When an AllLightsOn, AllLightsOff, or AllUnitsOff
  * command is transmitted the Unit Code will equal 00, and the Level (LL)
@@ -14,6 +14,8 @@ import ElkResponse from './ElkResponse';
  * it changes and is enabled by setting the location TRUE in the M1
  * Control Global Programming Location 39.
  * Example: “Xmit Light Chgs– ASCII” (Yes or No)
+ *
+ * @see 4.25.2 PLC Change Update (PC)
  */
 export default class PlcChangeUpdate extends ElkResponse {
   static readonly COMMAND = 'PC';

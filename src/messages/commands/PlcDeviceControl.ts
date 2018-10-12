@@ -2,7 +2,9 @@ import ElkCommand from './ElkCommand';
 import PlcFunctionCode from '../../enums/PlcFunctionCode';
 
 /**
- * 4.25.1 Control Any PLC Device (pc)
+ * Control Any PLC Device
+ *
+ * @see 4.25.1 Control Any PLC Device (pc)
  */
 export default class PlcDeviceControl extends ElkCommand {
   constructor(

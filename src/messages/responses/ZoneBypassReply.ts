@@ -1,7 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.40.2 Reply With Bypassed Zone State (ZB)
+ * Reply With Bypassed Zone State
+ *
+ * @see 4.40.2 Reply With Bypassed Zone State (ZB)
  */
 export default class ZoneBypassReply extends ElkResponse {
   static readonly COMMAND = 'ZB';

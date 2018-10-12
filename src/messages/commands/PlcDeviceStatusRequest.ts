@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.25.5 Request PLC status (ps)
+ * Request PLC status
+ *
+ * @see 4.25.5 Request PLC status (ps)
  */
 export default class PlcDeviceStatusRequest extends ElkCommand {
   constructor(readonly bank: number) {

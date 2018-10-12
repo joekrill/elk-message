@@ -1,10 +1,11 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.2.12 Arming Status Request (as)
+ * Requests current arming status for all areas.
  *
- * Requests current arming status
- * The control panel responds to this message with an Arming Status Report
+ * The control panel responds to this message with a {@link ArmingStatusReport}
+ *
+ * @see 4.2.12 Arming Status Request (as)
  */
 export default class ArmingStatusRequest extends ElkCommand {
   constructor() {

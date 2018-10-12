@@ -2,7 +2,7 @@ import ElkCommand from './ElkCommand';
 import FunctionKey from '../../enums/FunctionKey';
 
 /**
- * 4.22.1 Request Keypad Function Key Press (kf)
+ * Request Keypad Function Key Press
  *
  * This command simulates a function key being pressed on a keypad.
  * This will only be single key press even if the M1 Control is
@@ -11,6 +11,8 @@ import FunctionKey from '../../enums/FunctionKey';
  *
  * SilenceTroubleBeep (‘*’) key: M1 Version 4.2.6 and after
  * Chome (‘C’) key: M1 Version 4.3.2 and after.
+ *
+ * @see 4.22.1 Request Keypad Function Key Press (kf)
  */
 export default class KeypadFunctionKeyPressRequest extends ElkCommand {
   constructor(readonly keypadNumber: number, readonly functionKey: FunctionKey = FunctionKey.None) {

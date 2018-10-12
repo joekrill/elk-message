@@ -2,9 +2,11 @@ import ElkResponse from './ElkResponse';
 import AudioCommand from '../../enums/AudioCommand';
 
 /**
- * 4.8.3 Outgoing Audio Command (CD)
+ * Outgoing Audio Command
  *
- * @see {AudioCommandIncoming}
+ * A response to {@link AudioCommandIncoming}
+ *
+ * @see 4.8.3 Outgoing Audio Command (CD)
  */
 export default class AudioCommandOutgoing extends ElkResponse {
   static readonly COMMAND = 'CD';

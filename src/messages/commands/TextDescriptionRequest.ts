@@ -2,10 +2,12 @@ import ElkCommand from './ElkCommand';
 import TextDescriptionType from '../../enums/TextDescriptionType';
 
 /**
- * 4.29.1 Request ASCII String Text Descriptions (sd)
+ * Request ASCII String Text Descriptions
  *
  * This request command allows automation equipment to read
  * the text descriptions that are stored in the control.
+ *
+ * @see 4.29.1 Request ASCII String Text Descriptions (sd)
  */
 export default class TextDescriptionRequest extends ElkCommand {
   constructor(readonly textType: TextDescriptionType, readonly address: number) {

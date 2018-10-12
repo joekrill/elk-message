@@ -58,11 +58,13 @@ function generateData(
 }
 
 /**
- * 4.11.1 Request Change User Code (cu)
+ * Request Change User Code
  *
  * This command allows automation equipment to change a user code. The
  * data packet must include a Master User Code or the current user code
  * of the user code to be changed. 4.3.9 and after.
+ *
+ * @see 4.11.1 Request Change User Code (cu)
  */
 export default class UserCodeChangeRequest extends ElkCommand {
   readonly newUserCode: UserCode;

@@ -2,7 +2,7 @@ import ElkResponse from './ElkResponse';
 import UserCode from '../../models/UserCode';
 
 /**
- * 4.17 Send Valid User Number And Invalid User Code (IC)
+ * Send Valid User Number And Invalid User Code
  *
  * This ASCII Data Packet will be sent when a user code is entered
  * and a valid code is found. Only the valid user code number will be
@@ -21,6 +21,8 @@ import UserCode from '../../models/UserCode';
  * to the M1 after it has verified the proper code is in its data
  * base. Modified for 26 bit Weigand data cards and available in
  * M1 Version 4.2.8 and after.
+ *
+ * @see 4.17 Send Valid User Number And Invalid User Code (IC)
  */
 export default class UserCodeEntry extends ElkResponse {
   static readonly COMMAND = 'IC';

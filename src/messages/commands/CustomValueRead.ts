@@ -1,9 +1,11 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.10.1 Read Custom Value (cr)
+ * Read Custom Value
  *
- * @see {CustomValueReply}
+ * The control response with {@link CustomValueReply}
+ *
+ * @see 4.10.1 Read Custom Value (cr)
  */
 export default class CustomValueRead extends ElkCommand {
   constructor(readonly valueNumber: number) {

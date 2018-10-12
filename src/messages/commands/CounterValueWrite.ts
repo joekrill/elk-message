@@ -1,7 +1,9 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.12.2 Write Counter Value (cx)
+ * Write Counter Value
+ *
+ * @see 4.12.2 Write Counter Value (cx)
  */
 export default class CounterValueWrite extends ElkCommand {
   constructor(readonly counterNumber: number, readonly value: number) {

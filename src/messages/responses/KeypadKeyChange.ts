@@ -4,7 +4,9 @@ import KeypadKey from '../../enums/KeypadKey';
 import IlluminationStatus from '../../enums/IlluminationStatus';
 
 /**
- * 4.21 Keypad KeyChange Update (KC)
+ * Keypad KeyChange Update
+ *
+ * @see 4.21 Keypad KeyChange Update (KC)
  */
 export default class KeypadKeyChange extends ElkResponse {
   static readonly COMMAND = 'KC';

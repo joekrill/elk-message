@@ -3,7 +3,9 @@ import DayOfWeek from '../../enums/DayOfWeek';
 import MonthOfYear from '../../enums/MonthOfYear';
 
 /**
- * 4.28.3 Write Real Time Clock Data (rw)
+ * Write Real Time Clock Data
+ *
+ * @see 4.28.3 Write Real Time Clock Data (rw)
  */
 export default class RealTimeClockDataWrite extends ElkCommand {
   constructor(

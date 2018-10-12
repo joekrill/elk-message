@@ -1,7 +1,7 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.34 Task Activation (tn)
+ * Task Activation
  *
  * You can use your PC to send a command to activate a Task. Tasks
  * are event flags that are common to the telephone remote control
@@ -16,6 +16,8 @@ import ElkCommand from './ElkCommand';
  * decimal ASCII digits (1 base) corresponding to the number of the
  * desired Task to activate. Range: 001 to 032. This value is a three
  * digit value for future expansion.
+ *
+ * @see 4.34 Task Activation (tn)
  */
 export default class TaskActivation extends ElkCommand {
   constructor(readonly taskNumber: number) {

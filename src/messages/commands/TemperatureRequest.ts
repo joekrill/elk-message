@@ -2,7 +2,7 @@ import ElkCommand from './ElkCommand';
 import TemperatureDeviceType from '../../enums/TemperatureDeviceType';
 
 /**
- * 4.31.1 Request Temperature format (st)
+ * Request Temperature format
  *
  * This request command allows automation equipment to read
  * temperatures of the temperature probes connected to zones
@@ -12,6 +12,8 @@ import TemperatureDeviceType from '../../enums/TemperatureDeviceType';
  *
  * Version 4.2.8 and later sends automatic temperature updates
  * out Port 0 when any temperature device parameter changes.
+ *
+ * @see 4.31.1 Request Temperature format (st)
  */
 export default class TemperatureRequest extends ElkCommand {
   constructor(readonly deviceType: TemperatureDeviceType, readonly deviceNumber: number) {

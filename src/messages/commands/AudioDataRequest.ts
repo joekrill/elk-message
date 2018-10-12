@@ -1,11 +1,13 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.6.1 Request Audio Data (ca)
+ * Request Audio Data
  *
  * Request alarm by zone
  *
  * The control panel responds to this message with an Alarm By Zone Report
+ *
+ * @see 4.6.1 Request Audio Data (ca)
  */
 export default class AudioDataRequst extends ElkCommand {
   constructor(readonly zoneNumber: number) {

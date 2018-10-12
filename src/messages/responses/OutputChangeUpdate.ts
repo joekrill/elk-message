@@ -1,7 +1,7 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * 4.7 Output Change Update (CC)
+ * Output Change Update
  *
  * This transmission update option transmits the updated status whenever
  * it changes and is enabled by setting the location TRUE in the M1 Control
@@ -10,6 +10,8 @@ import ElkResponse from './ElkResponse';
  *
  * The Output Change Update will also be transmitted out M1XSP Serial Port
  * Expanders that are configured in the Generic Mode.
+ *
+ * @see 4.7 Output Change Update (CC)
  */
 export default class OutputChangeUpdate extends ElkResponse {
   static readonly COMMAND = 'CC';

@@ -7,7 +7,11 @@ function versionsToString(major: number, minor: number, patch: number) {
 }
 
 /**
- * 4.36.2 Reply M1 Version Number (VN)
+ * Reply M1 Version Number
+ *
+ * Response to {@link VersionNumberRequest}
+ *
+ * @see 4.36.2 Reply M1 Version Number (VN)
  */
 export default class VersionNumberReply extends ElkResponse {
   static readonly COMMAND = 'VN';

@@ -1,7 +1,9 @@
 import ElkResponse from './ElkResponse';
 
 /**
- * .41.2 Reply Zone Definition Data (ZD)
+ * Reply Zone Definition Data
+ *
+ * @see 4.41.2 Reply Zone Definition Data (ZD)
  */
 export default class ZoneDefinitionData extends ElkResponse {
   static readonly COMMAND = 'ZD';

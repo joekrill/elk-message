@@ -1,13 +1,15 @@
 import ElkCommand from './ElkCommand';
 
 /**
- * 4.40.1 Zone Bypass Request (zb)
+ * Zone Bypass Request
  *
  * This command allows for bypassing/unbypassing a zone.
  * Zone = 000 will unbypass all burglar zones in the.
  * Zone = 999 will bypass all violated burglar zones.
  * Area to bypass/unbypass is required if Zone equals
  * 000 or 999 otherwise it is ignored.
+ *
+ * @see 4.40.1 Zone Bypass Request (zb)
  */
 export default class ZoneBypassRequest extends ElkCommand {
   constructor(
