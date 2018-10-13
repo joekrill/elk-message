@@ -4,6 +4,8 @@ import TextDescriptionType from '../../enums/TextDescriptionType';
 /**
  * Reply With ASCII String Text Descriptions
  *
+ * Sent as a response to {@link TextDescriptionRequest}
+ *
  * @see 4.29.2 Reply With ASCII String Text Descriptions (SD)
  */
 export default class TextDescriptionReply extends ElkResponse {

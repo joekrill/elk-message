@@ -4,7 +4,7 @@ import ZoneDefinition from '../../enums/ZoneDefinition';
 /**
  * Reply Alarm By Zone Report Data
  *
- * Can be requested using a {@link AlarmByZoneRequest}
+ * May be requested by sending a {@link AlarmByZoneRequest}
  *
  * @see 4.5.1 Reply Alarm By Zone Report Data (AZ)
  */
