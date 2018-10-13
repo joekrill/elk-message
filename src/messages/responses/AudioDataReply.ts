@@ -4,6 +4,8 @@ import PartyMode from '../../enums/PartyMode';
 /**
  * Reply With Audio Data
  *
+ * Sent as a response to {@link AudioDataRequest}
+ *
  * @see 4.6.2 Reply With Audio Data (CA)
  */
 export default class AudioDataReply extends ElkResponse {

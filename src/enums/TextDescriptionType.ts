@@ -1,4 +1,4 @@
-enum TextDescriptionsType {
+enum TextDescriptionType {
   ZoneName = 0,
   AreaName = 1,
   UserName = 2,
@@ -21,4 +21,4 @@ enum TextDescriptionsType {
   AudioSourceName = 19
 }
 
-export default TextDescriptionsType;
+export default TextDescriptionType;

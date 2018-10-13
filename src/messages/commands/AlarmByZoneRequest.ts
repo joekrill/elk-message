@@ -5,8 +5,8 @@ import ElkCommand from './ElkCommand';
  *
  * Request alarm by zone
  *
- * The control panel responds to this message with an Alarm By Zone Report
- * @see {@link AlarmByZoneReport}
+ * The control panel responds to this message with a
+ * {@link AlarmByZoneReport}
  */
 export default class AlarmByZoneRequest extends ElkCommand {
   constructor() {
