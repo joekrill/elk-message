@@ -39,7 +39,7 @@ export function encodeAreaNumbers(areaNumbers?: number[]) {
 }
 
 function generateData(
-  userNumber: number,
+  userCode: number,
   masterOrCurrentUserCode: string | UserCode,
   newUserCode: string | UserCode,
   areaNumbers?: number[]
@@ -50,7 +50,7 @@ function generateData(
       : masterOrCurrentUserCode;
   const newCode = typeof newUserCode === 'string' ? new UserCode(newUserCode) : newUserCode;
   return (
-    userNumber.toString().padStart(3, '0') +
+    userCode.toString().padStart(3, '0') +
     authCode.encode() +
     newCode.encode() +
     encodeAreaNumbers(areaNumbers)
@@ -71,13 +71,13 @@ export default class UserCodeChangeRequest extends ElkCommand {
   readonly authorizationUserCode: UserCode;
 
   constructor(
-    readonly userNumber: number,
+    readonly userCode: number,
     masterOrCurrentUserCode: string | UserCode,
     newUserCode: string | UserCode,
     readonly areaNumbers?: number[],
     readonly changeType: UserCodeChangeType = UserCodeChangeType.UserCode
   ) {
-    super('c', 'u', generateData(userNumber, masterOrCurrentUserCode, newUserCode, areaNumbers));
+    super('c', 'u', generateData(userCode, masterOrCurrentUserCode, newUserCode, areaNumbers));
     this.authorizationUserCode =
       typeof masterOrCurrentUserCode === 'string'
         ? new UserCode(masterOrCurrentUserCode)

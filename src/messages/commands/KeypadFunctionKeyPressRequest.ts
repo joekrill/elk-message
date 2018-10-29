@@ -10,7 +10,7 @@ import FunctionKey from '../../enums/FunctionKey';
  * after.
  *
  * SilenceTroubleBeep (‘*’) key: M1 Version 4.2.6 and after
- * Chime (‘C’) key: M1 Version 4.3.2 and after.
+ * Chome (‘C’) key: M1 Version 4.3.2 and after.
  *
  * @see 4.22.1 Request Keypad Function Key Press (kf)
  */
