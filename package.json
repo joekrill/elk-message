@@ -41,7 +41,7 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": [
+    "{src}/**/*.ts": [
       "prettier --write",
       "git add"
     ]
